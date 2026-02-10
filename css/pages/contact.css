@@ -1,0 +1,120 @@
+/* Contact Page Styles */
+
+.page-hero {
+  padding-top: calc(var(--header-height) + var(--space-16));
+  padding-bottom: var(--space-12);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white;
+  text-align: center;
+}
+
+.page-hero h1 {
+  color: white;
+}
+
+.page-hero-sub {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: var(--space-6);
+}
+
+.quick-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.office-hours {
+  padding: var(--space-8) 0;
+}
+
+.hours-card {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hours-card h3 {
+  margin-bottom: var(--space-4);
+  color: var(--color-primary);
+}
+
+.offices {
+  padding: var(--space-12) 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.office-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-8);
+}
+
+.office-card h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+.office-card address {
+  font-style: normal;
+  margin-bottom: var(--space-4);
+  line-height: var(--line-relaxed);
+}
+
+.contact-link {
+  display: inline-block;
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-4);
+}
+
+.map-container {
+  margin-top: var(--space-4);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.map-container iframe {
+  display: block;
+}
+
+.enquiry-form {
+  padding: var(--space-12) 0 var(--space-16);
+  background: var(--color-bg-alt);
+}
+
+.form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.enquiry-form-inner {
+  padding: var(--space-6);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

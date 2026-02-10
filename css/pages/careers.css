@@ -1,0 +1,117 @@
+/* Careers Page Styles */
+
+.careers-hero {
+  padding-top: calc(var(--header-height) + var(--space-16));
+  padding-bottom: var(--space-12);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white;
+  text-align: center;
+}
+
+.careers-hero h1 {
+  color: white;
+  font-size: clamp(var(--text-2xl), 5vw, var(--text-4xl));
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-2);
+}
+
+.careers-tagline {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-6);
+  opacity: 0.95;
+}
+
+.careers-intro {
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.positions {
+  padding: var(--space-12) 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.positions-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-12);
+}
+
+.position-card h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+.qualifications {
+  text-align: center;
+}
+
+.qualifications h3 {
+  margin-bottom: var(--space-4);
+}
+
+.qualifications ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-8);
+}
+
+.apply-section {
+  padding: var(--space-12) 0 var(--space-16);
+  background: var(--color-bg-alt);
+}
+
+.apply-options {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.apply-whatsapp {
+  display: inline-flex;
+}
+
+.form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.apply-form {
+  padding: var(--space-6);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.apply-form input[type="file"] {
+  padding: var(--space-2);
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

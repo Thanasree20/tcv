@@ -1,0 +1,73 @@
+/* Empanelment Page Styles */
+
+.page-hero {
+  padding-top: calc(var(--header-height) + var(--space-16));
+  padding-bottom: var(--space-12);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white;
+  text-align: center;
+}
+
+.page-hero h1 {
+  color: white;
+}
+
+.page-hero-sub {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.empanelment-grid-section {
+  padding: var(--space-12) 0;
+}
+
+.empanelment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+
+.empanelment-item {
+  padding: var(--space-4);
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-weight: var(--font-medium);
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.empanelment-item:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent);
+}
+
+.loading {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-8);
+  color: var(--color-text-muted);
+}
+
+.empanelment-cta {
+  padding: var(--space-12) 0;
+  background: var(--color-bg-alt);
+  text-align: center;
+}
+
+.empanelment-cta p {
+  margin-bottom: var(--space-4);
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

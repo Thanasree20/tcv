@@ -1,0 +1,84 @@
+/* Services Page Styles */
+
+.page-hero {
+  padding-top: calc(var(--header-height) + var(--space-16));
+  padding-bottom: var(--space-12);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white;
+  text-align: center;
+}
+
+.page-hero h1 {
+  color: white;
+}
+
+.page-hero-sub {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.services-detail {
+  padding: var(--space-12) 0;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.service-item-content {
+  display: flex;
+  gap: var(--space-6);
+  align-items: flex-start;
+}
+
+.service-item .icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  color: var(--color-accent);
+}
+
+.service-item h3 {
+  margin-bottom: var(--space-2);
+  color: var(--color-primary);
+}
+
+.service-item p {
+  margin-bottom: var(--space-4);
+}
+
+.cta-section {
+  padding: var(--space-12) 0;
+  background: var(--color-bg-alt);
+  text-align: center;
+}
+
+.cta-section .cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .service-item-content {
+    flex-direction: column;
+  }
+}
+
+.service-item {
+  scroll-margin-top:var(--header-height);
+}
