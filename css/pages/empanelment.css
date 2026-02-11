@@ -71,3 +71,24 @@
   opacity: 1;
   transform: translateY(0);
 }
+.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: var(--color-primary);
+}
+
+.empanelment-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: center;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.empanelment-card:hover {
+  transform: translateY(-5px);
+}
+
