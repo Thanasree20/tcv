@@ -37,37 +37,24 @@
   );
 }
 
-
-/* =========================================================
-   HERO CONTENT
-   ========================================================= */
-
 .hero-content {
   position: relative;
   z-index: 1;
   width: 100%;
-  box-sizing: border-box;
-
   text-align: center;
   color: white;
-
-  /* Creates clear gap between header and announcement */
   padding: 65px var(--space-4) var(--space-8);
 }
 
 
 /* =========================================================
-   LOCATION ANNOUNCEMENT
+   HERO LOCATION ANNOUNCEMENT
    ========================================================= */
 
 .hero-announcement {
   position: relative;
-  z-index: 2;
-
   width: min(900px, 100%);
-  box-sizing: border-box;
-
-  margin: 0 auto 28px;
+  margin: 0 auto var(--space-6);
   padding: 22px 30px 20px;
 
   border: 1px solid rgba(201, 162, 39, 0.55);
@@ -93,7 +80,7 @@
 }
 
 
-/* Moving shine */
+/* Moving shine effect */
 
 .hero-announcement::before {
   content: "";
@@ -115,6 +102,8 @@
   transform: skewX(-20deg);
 
   animation: announcementShine 5s ease-in-out infinite;
+
+  pointer-events: none;
 }
 
 
@@ -231,6 +220,7 @@
   font-weight: 800;
 
   text-transform: uppercase;
+
   letter-spacing: 0.8px;
 }
 
@@ -244,7 +234,8 @@
 
   background: #e1b72e;
 
-  box-shadow: 0 0 0 0 rgba(225, 183, 46, 0.6);
+  box-shadow:
+    0 0 0 0 rgba(225, 183, 46, 0.6);
 
   animation: launchPulse 1.8s infinite;
 }
@@ -260,6 +251,7 @@
 
 .location-dot {
   color: #e1b72e;
+
   font-size: 17px;
 }
 
@@ -504,272 +496,6 @@
 
 
 /* =========================================================
-   ANNOUNCEMENT ANIMATIONS
-   ========================================================= */
-
-@keyframes announcementAppear {
-  from {
-    opacity: 0;
-
-    transform: translateY(-18px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform: translateY(0);
-  }
-}
-
-@keyframes announcementShine {
-  0% {
-    left: -100%;
-  }
-
-  35% {
-    left: 120%;
-  }
-
-  100% {
-    left: 120%;
-  }
-}
-
-@keyframes starGlow {
-  0%,
-  100% {
-    opacity: 0.7;
-
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: 1;
-
-    transform: scale(1.2);
-  }
-}
-
-@keyframes launchPulse {
-  0% {
-    transform: scale(1);
-
-    box-shadow:
-      0 0 0 0
-      rgba(225, 183, 46, 0.55);
-  }
-
-  70% {
-    transform: scale(1.15);
-
-    box-shadow:
-      0 0 0 8px
-      rgba(225, 183, 46, 0);
-  }
-
-  100% {
-    transform: scale(1);
-
-    box-shadow:
-      0 0 0 0
-      rgba(225, 183, 46, 0);
-  }
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-  .hero-content {
-    padding-top: 12px;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  .hero-announcement {
-    width: 100%;
-
-    margin-top: 0;
-    margin-bottom: 26px;
-
-    padding: 18px 18px 17px;
-
-    border-radius: 15px;
-  }
-
-  .announcement-heading {
-    font-size: 10px;
-
-    letter-spacing: 1.7px;
-  }
-
-  .announcement-title {
-    font-size: 1.55rem;
-  }
-
-  .announcement-description {
-    font-size: 13px;
-
-    line-height: 1.5;
-  }
-
-  .announcement-launch {
-    font-size: 11px;
-
-    gap: 7px;
-  }
-
-  .announcement-launch strong {
-    font-size: 11px;
-  }
-
-  .hero-badges {
-    margin-bottom: 24px;
-  }
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 480px) {
-
-  /*
-     IMPORTANT:
-     Keep the gap small on mobile.
-     Do not add large padding here.
-  */
-
-  .hero-content {
-    padding-top: 8px;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-
-  .hero-announcement {
-    width: 100%;
-
-    margin-top: 0;
-    margin-left: 0;
-    margin-right: 0;
-
-    margin-bottom: 24px;
-
-    padding: 16px 12px;
-
-    border-radius: 15px;
-  }
-
-  .announcement-heading {
-    font-size: 9px;
-
-    letter-spacing: 1.4px;
-  }
-
-  .announcement-title {
-    font-size: 1.35rem;
-
-    line-height: 1.25;
-  }
-
-  .announcement-description {
-    font-size: 12px;
-
-    line-height: 1.5;
-
-    margin-bottom: 12px;
-  }
-
-  .announcement-launch {
-    width: 100%;
-    box-sizing: border-box;
-
-    padding: 8px 11px;
-
-    font-size: 10px;
-
-    line-height: 1.5;
-  }
-
-  .announcement-launch strong {
-    font-size: 10px;
-  }
-
-  .launch-line {
-    display: none;
-  }
-
-  .location-dot {
-    font-size: 13px;
-  }
-
-  .hero-badges {
-    margin-bottom: 22px;
-  }
-
-  .hero-badges .badge {
-    padding: 10px 14px;
-  }
-
-  .hero-title {
-    font-size: clamp(2rem, 8vw, 2.5rem);
-
-    line-height: 1.2;
-  }
-
-  .hero-tagline {
-    font-size: 1rem;
-
-    line-height: 1.5;
-
-    padding: 0 10px;
-  }
-
-  .hero-ctas {
-    gap: 10px;
-  }
-}
-
-
-/* =========================================================
-   EXTRA SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 360px) {
-
-  .hero-content {
-    padding-top: 6px;
-  }
-
-  .hero-announcement {
-    margin-bottom: 20px;
-
-    padding: 14px 10px;
-  }
-
-  .announcement-title {
-    font-size: 1.2rem;
-  }
-
-  .announcement-description {
-    font-size: 11px;
-  }
-
-  .announcement-launch {
-    font-size: 9px;
-  }
-
-  .announcement-launch strong {
-    font-size: 9px;
-  }
-}
-
-
-/* =========================================================
    TESTIMONIALS
    ========================================================= */
 
@@ -836,7 +562,6 @@
 
 .gallery-item img {
   width: 100%;
-
   height: 100%;
 
   object-fit: cover;
@@ -908,4 +633,507 @@
   padding: 0 var(--space-4) var(--space-4);
 
   margin: 0;
+}
+
+
+/* =========================================================
+   ANNOUNCEMENT ANIMATIONS
+   ========================================================= */
+
+@keyframes announcementAppear {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(-18px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes announcementShine {
+
+  0% {
+    left: -100%;
+  }
+
+  35% {
+    left: 120%;
+  }
+
+  100% {
+    left: 120%;
+  }
+
+}
+
+
+@keyframes starGlow {
+
+  0%,
+  100% {
+    opacity: 0.7;
+
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scale(1.2);
+  }
+
+}
+
+
+@keyframes launchPulse {
+
+  0% {
+    transform: scale(1);
+
+    box-shadow:
+      0 0 0 0 rgba(225, 183, 46, 0.55);
+  }
+
+  70% {
+    transform: scale(1.15);
+
+    box-shadow:
+      0 0 0 8px rgba(225, 183, 46, 0);
+  }
+
+  100% {
+    transform: scale(1);
+
+    box-shadow:
+      0 0 0 0 rgba(225, 183, 46, 0);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: auto;
+
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    padding:
+      15px
+      var(--space-4)
+      var(--space-8);
+  }
+
+
+  /* Announcement */
+
+  .hero-announcement {
+    width: 100%;
+
+    margin:
+      0 auto
+      var(--space-5);
+
+    padding:
+      18px
+      18px
+      17px;
+
+    border-radius: 15px;
+  }
+
+  .announcement-heading {
+    font-size: 10px;
+
+    letter-spacing: 1.7px;
+  }
+
+  .announcement-title {
+    font-size: 1.55rem;
+  }
+
+  .announcement-description {
+    font-size: 13px;
+
+    line-height: 1.5;
+  }
+
+  .announcement-launch {
+    font-size: 11px;
+
+    gap: 7px;
+  }
+
+  .announcement-launch strong {
+    font-size: 11px;
+  }
+
+
+  /* Hero */
+
+  .hero-title {
+    font-size:
+      clamp(
+        2rem,
+        6vw,
+        3.5rem
+      );
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  /*
+   * IMPORTANT:
+   * Removes the large white space created by the
+   * desktop page-content header padding.
+   */
+
+  .page-content {
+    padding-top: 0 !important;
+  }
+
+
+  /* =======================================================
+     HERO
+     ======================================================= */
+
+  .hero {
+    min-height: auto;
+
+    padding-top: 8px;
+
+    padding-bottom: 25px;
+
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    width: 100%;
+
+    padding:
+      0
+      10px
+      25px !important;
+  }
+
+
+  /* =======================================================
+     LOCATION ANNOUNCEMENT
+     ======================================================= */
+
+  .hero-announcement {
+    width: 100%;
+
+    max-width: none;
+
+    margin:
+      0 auto
+      22px;
+
+    padding:
+      16px
+      12px
+      17px;
+
+    border-radius: 18px;
+  }
+
+
+  .announcement-heading {
+    gap: 8px;
+
+    margin-bottom: 8px;
+
+    font-size: 9px;
+
+    letter-spacing: 1.4px;
+  }
+
+  .announcement-star {
+    font-size: 14px;
+  }
+
+
+  .announcement-title {
+    margin-bottom: 9px;
+
+    font-size: 1.5rem;
+
+    line-height: 1.2;
+  }
+
+
+  .announcement-description {
+    max-width: 100%;
+
+    margin-bottom: 14px;
+
+    font-size: 12px;
+
+    line-height: 1.45;
+  }
+
+
+  /* =======================================================
+     LAUNCHING SOON
+     ======================================================= */
+
+  .announcement-launch {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    padding:
+      9px
+      10px;
+
+    border-radius: 25px;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+  }
+
+  .announcement-launch strong {
+    font-size: 11px;
+  }
+
+  .launch-dot {
+    width: 8px;
+
+    height: 8px;
+  }
+
+  .launch-line {
+    height: 16px;
+
+    margin: 0 2px;
+  }
+
+  .location-dot {
+    font-size: 13px;
+  }
+
+
+  /* =======================================================
+     ENGINEER / VALUER BADGES
+     ======================================================= */
+
+  .hero-badges {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 28px;
+  }
+
+  .hero-badges .badge {
+    width: auto;
+
+    min-width: 260px;
+
+    padding:
+      11px
+      16px;
+
+    font-size: 14px;
+
+    border-radius: 10px;
+
+    text-align: center;
+  }
+
+
+  /* =======================================================
+     MAIN HERO TITLE
+     ======================================================= */
+
+  .hero-title {
+    max-width: 100%;
+
+    margin-bottom: 16px;
+
+    font-size: 2rem;
+
+    line-height: 1.18;
+  }
+
+
+  /* =======================================================
+     HERO DESCRIPTION
+     ======================================================= */
+
+  .hero-tagline {
+    max-width: 100%;
+
+    margin:
+      0 auto
+      25px;
+
+    padding:
+      0
+      5px;
+
+    font-size: 1rem;
+
+    line-height: 1.55;
+  }
+
+
+  /* =======================================================
+     HERO BUTTONS
+     ======================================================= */
+
+  .hero-ctas {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+  }
+
+  .hero-ctas .btn {
+    width: 90%;
+
+    max-width: 280px;
+
+    min-width: 0;
+  }
+
+
+  /* =======================================================
+     TRUST BAR
+     ======================================================= */
+
+  .trust-items {
+    gap: 20px;
+  }
+
+  .trust-number {
+    font-size: 1.8rem;
+  }
+
+  .trust-label {
+    font-size: 0.75rem;
+  }
+
+
+  /* =======================================================
+     HIRING BANNER
+     ======================================================= */
+
+  .hiring-text {
+    font-size: 1rem;
+  }
+
+  .hiring-sub {
+    text-align: center;
+
+    font-size: 0.78rem;
+  }
+
+
+  /* =======================================================
+     OTHER SECTIONS
+     ======================================================= */
+
+  .services-overview,
+  .testimonials,
+  .gallery,
+  .faq {
+    padding:
+      50px
+      0;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .hero {
+    padding-top: 6px;
+  }
+
+  .hero-content {
+    padding-left: 8px !important;
+
+    padding-right: 8px !important;
+  }
+
+
+  .hero-announcement {
+    padding:
+      15px
+      10px
+      16px;
+  }
+
+
+  .announcement-title {
+    font-size: 1.35rem;
+  }
+
+  .announcement-description {
+    font-size: 11.5px;
+  }
+
+  .announcement-launch {
+    font-size: 10px;
+  }
+
+  .announcement-launch strong {
+    font-size: 10px;
+  }
+
+
+  .hero-badges .badge {
+    min-width: 240px;
+
+    font-size: 13px;
+  }
+
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
 }
