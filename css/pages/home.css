@@ -279,7 +279,338 @@
   content: '−';
 }
 
+
+
 .faq-item p {
   padding: 0 var(--space-4) var(--space-4);
   margin: 0;
+}
+/* =========================================================
+   PREMIUM TOP LOCATION ANNOUNCEMENT
+   ========================================================= */
+
+.location-announcement {
+  position: relative;
+  width: 100%;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #102b4c;
+  border-bottom: 2px solid #c9a227;
+  color: white;
+  z-index: 9999;
+}
+
+/* ---------------------------------------------------------
+   LEFT GOLD BADGE
+   --------------------------------------------------------- */
+
+.announcement-badge {
+  position: relative;
+  z-index: 10;
+
+  height: 100%;
+  min-width: 190px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  background: #c9a227;
+  color: #102b4c;
+
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+
+  flex-shrink: 0;
+
+  box-shadow: 8px 0 25px rgba(0, 0, 0, 0.15);
+}
+
+.announcement-pulse {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+
+  background: #102b4c;
+
+  animation: announcementPulse 1.8s infinite;
+}
+
+/* ---------------------------------------------------------
+   SCROLLING AREA
+   --------------------------------------------------------- */
+
+.announcement-track {
+  flex: 1;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+/* Fade at edges */
+
+.announcement-track::before,
+.announcement-track::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.announcement-track::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    #102b4c,
+    transparent
+  );
+}
+
+.announcement-track::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    #102b4c,
+    transparent
+  );
+}
+
+/* ---------------------------------------------------------
+   CONTENT
+   --------------------------------------------------------- */
+
+.announcement-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+
+  white-space: nowrap;
+
+  padding-left: 40px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  animation: announcementScroll 30s linear infinite;
+}
+
+.announcement-main {
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.announcement-launch {
+  color: #e1b72e;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.announcement-location {
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.announcement-description {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.announcement-separator {
+  color: #d5ad28;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.announcement-star {
+  color: #d5ad28;
+  font-size: 18px;
+}
+
+.announcement-repeat {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: 30px;
+}
+
+/* ---------------------------------------------------------
+   ANIMATION
+   --------------------------------------------------------- */
+
+@keyframes announcementScroll {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+
+}
+
+@keyframes announcementPulse {
+
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(16, 43, 76, 0.6);
+  }
+
+  70% {
+    transform: scale(1.15);
+    opacity: 0.75;
+    box-shadow: 0 0 0 9px rgba(16, 43, 76, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(16, 43, 76, 0);
+  }
+
+}
+
+/* Pause when user hovers */
+
+.location-announcement:hover .announcement-content {
+  animation-play-state: paused;
+}
+
+
+/* =========================================================
+   FIX EXISTING NAVIGATION OVERLAP
+   ========================================================= */
+
+/*
+   If your header is fixed/sticky at the top,
+   this moves it below the announcement.
+*/
+
+.site-header {
+  top: 62px !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .location-announcement {
+    height: 56px;
+  }
+
+  .announcement-badge {
+    min-width: 150px;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .announcement-content {
+    gap: 15px;
+    font-size: 13px;
+    animation-duration: 24s;
+  }
+
+  .announcement-main {
+    font-size: 14px;
+  }
+
+  .announcement-launch {
+    font-size: 14px;
+  }
+
+  .announcement-description {
+    font-size: 12px;
+  }
+
+  .announcement-location {
+    font-size: 13px;
+  }
+
+  .site-header {
+    top: 56px !important;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .location-announcement {
+    height: 50px;
+  }
+
+  .announcement-badge {
+    min-width: 125px;
+    padding: 0 10px;
+    font-size: 9px;
+    letter-spacing: 0.8px;
+  }
+
+  .announcement-pulse {
+    width: 7px;
+    height: 7px;
+  }
+
+  .announcement-content {
+    gap: 12px;
+    padding-left: 25px;
+    font-size: 12px;
+    animation-duration: 20s;
+  }
+
+  .announcement-main {
+    font-size: 13px;
+  }
+
+  .announcement-launch {
+    font-size: 12px;
+  }
+
+  .announcement-location {
+    font-size: 12px;
+  }
+
+  .announcement-description {
+    display: none;
+  }
+
+  .announcement-separator {
+    font-size: 15px;
+  }
+
+  .announcement-star {
+    font-size: 14px;
+  }
+
+  .announcement-repeat {
+    gap: 12px;
+  }
+
+  .site-header {
+    top: 50px !important;
+  }
+
 }
