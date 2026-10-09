@@ -278,6 +278,29 @@
 }
 
 @media (max-width: 768px) {
+  .site-header {
+    height: auto;
+    min-height: var(--header-height);
+  }
+
+  .header-inner {
+    min-height: var(--header-height);
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-2);
+    gap: var(--space-3);
+  }
+
+  .logo {
+    min-width: 0;
+    max-width: calc(100% - 52px);
+    font-size: clamp(0.875rem, 4vw, var(--text-xl));
+    line-height: 1.2;
+  }
+
+  .nav-toggle {
+    flex: 0 0 auto;
+  }
+
   .mobile-cta-bar {
     display: block;
   }
@@ -371,7 +394,7 @@
 
   .main-nav ul {
     position: absolute;
-    top: var(--header-height);
+    top: 100%;
     left: 0;
     right: 0;
     flex-direction: column;
