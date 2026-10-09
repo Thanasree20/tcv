@@ -279,14 +279,15 @@
 
 @media (max-width: 768px) {
   .site-header {
-    height: auto;
+    height: var(--header-height);
     min-height: var(--header-height);
   }
 
   .header-inner {
-    min-height: var(--header-height);
-    padding-top: var(--space-2);
-    padding-bottom: var(--space-2);
+    height: 100%;
+    min-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     gap: var(--space-3);
   }
 
@@ -299,6 +300,10 @@
 
   .nav-toggle {
     flex: 0 0 auto;
+  }
+
+  .main-nav ul {
+    top: 100%;
   }
 
   .mobile-cta-bar {
