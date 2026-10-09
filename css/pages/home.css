@@ -1,9 +1,9 @@
-
 /* Home Page Styles */
 
 .page-content {
   padding-top: var(--header-height);
 }
+
 
 /* Hero */
 .hero {
@@ -298,11 +298,12 @@
   border: 1px solid rgba(201, 162, 39, 0.55);
   border-radius: 18px;
 
-  background: linear-gradient(
-    135deg,
-    rgba(201, 162, 39, 0.16),
-    rgba(255, 255, 255, 0.06)
-  );
+  background:
+    linear-gradient(
+      135deg,
+      rgba(201, 162, 39, 0.16),
+      rgba(255, 255, 255, 0.06)
+    );
 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -316,7 +317,9 @@
   animation: announcementAppear 0.9s ease-out both;
 }
 
+
 /* Subtle moving shine */
+
 .hero-announcement::before {
   content: "";
   position: absolute;
@@ -337,7 +340,9 @@
   animation: announcementShine 5s ease-in-out infinite;
 }
 
+
 /* Top label */
+
 .announcement-heading {
   position: relative;
   z-index: 2;
@@ -362,7 +367,9 @@
   animation: starGlow 2s ease-in-out infinite;
 }
 
+
 /* Main announcement */
+
 .announcement-title {
   position: relative;
   z-index: 2;
@@ -382,7 +389,9 @@
   color: #e1b72e;
 }
 
+
 /* Description */
+
 .announcement-description {
   position: relative;
   z-index: 2;
@@ -396,7 +405,9 @@
   line-height: 1.55;
 }
 
+
 /* Launching Soon + Locations */
+
 .announcement-launch {
   position: relative;
   z-index: 2;
@@ -458,11 +469,13 @@
   font-size: 17px;
 }
 
+
 /* =========================================================
    ANIMATIONS
    ========================================================= */
 
 @keyframes announcementAppear {
+
   from {
     opacity: 0;
     transform: translateY(-18px);
@@ -472,9 +485,12 @@
     opacity: 1;
     transform: translateY(0);
   }
+
 }
 
+
 @keyframes announcementShine {
+
   0% {
     left: -100%;
   }
@@ -486,9 +502,12 @@
   100% {
     left: 120%;
   }
+
 }
 
+
 @keyframes starGlow {
+
   0%,
   100% {
     opacity: 0.7;
@@ -499,9 +518,12 @@
     opacity: 1;
     transform: scale(1.2);
   }
+
 }
 
+
 @keyframes launchPulse {
+
   0% {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(225, 183, 46, 0.55);
@@ -516,13 +538,16 @@
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(225, 183, 46, 0);
   }
+
 }
+
 
 /* =========================================================
    TABLET
    ========================================================= */
 
 @media (max-width: 768px) {
+
   .hero-announcement {
     margin-bottom: var(--space-5);
     padding: 18px 18px 17px;
@@ -551,13 +576,16 @@
   .announcement-launch strong {
     font-size: 11px;
   }
+
 }
+
 
 /* =========================================================
    MOBILE
    ========================================================= */
 
 @media (max-width: 480px) {
+
   .hero-announcement {
     padding: 16px 12px;
     margin-left: 5px;
@@ -597,19 +625,9 @@
   .location-dot {
     font-size: 13px;
   }
+
 }
 
-/* =========================================================
-   MOBILE HEADER AND HERO SPACING FIX
-   Applies only to screens 768px wide and below.
-   ========================================================= */
 
-@media (max-width: 768px) {
-  .page-content {
-    padding-top: 64px;
-  }
-
-  .hero-content {
-    padding-top: 0;
-  }
-}
+.hero-content {
+  padding-top: 65px;
